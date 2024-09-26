@@ -1,20 +1,23 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using UssjStream.Models;
+using UssjStream.Web.Services.Videos;
 
 namespace UssjStream.Web.Controllers
 {
     [Authorize]
     public class VideoController : Controller
     {
+        private readonly IVideoService _videoService;
+
+        public VideoController(IVideoService videoService)
+        {
+            _videoService = videoService;
+        }
         public IActionResult Index()
         {
-            var video = new Video
-            {
-                Id = 1,
-                Title = "Video1",
-                VideoUrl = Url.Content($"~/videos/RM2Cesaire1.mp4")
-            };
+            _videoService.GetVideoById(1);
+
+            var video = _videoService.GetVideoById(1);
 
             return View(video);
         }

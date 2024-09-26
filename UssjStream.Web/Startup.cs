@@ -13,6 +13,10 @@
         public void ConfigureServices(WebApplicationBuilder builder)
         {
             var services = builder.Services;
+            builder.Configuration.AddJsonFile("SecretsKeys.json", optional: true, reloadOnChange: true);
+
+            //Add services with DI
+            services.AddTransient<IVideoService, VideoService>();
 
             services.AddControllersWithViews();
             services.AddAuthentication(item =>
@@ -44,8 +48,7 @@
             services.AddAuthorization();
 
 
-            //Add services with DI
-            services.AddTransient<IVideoService, VideoService>();
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

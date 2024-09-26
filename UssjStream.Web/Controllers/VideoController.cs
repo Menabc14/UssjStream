@@ -18,6 +18,7 @@ namespace UssjStream.Web.Controllers
             _videoService.GetVideoById(1);
 
             var video = _videoService.GetVideoById(1);
+            video.VideoUrl = Url.Content(_videoService.GetVideoUrl(video.Title));
 
             return View(video);
         }

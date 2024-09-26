@@ -14,8 +14,7 @@ namespace UssjStream.Web.Services.Videos
             var video = new Video
             {
                 Id = idVideo,
-                Title = "RM2Cesaire1",
-                VideoUrl = GetVideoUrl("RM2Cesaire1")
+                Title = "RM2Cesaire1",              
             };
 
             return video;

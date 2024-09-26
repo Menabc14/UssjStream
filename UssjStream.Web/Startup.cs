@@ -2,6 +2,8 @@
 {
     using Microsoft.AspNetCore.Authentication.Cookies;
     using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+    using UssjStream.Web.Services.Videos;
+
     public class Startup
     {
         public Startup()
@@ -40,6 +42,10 @@
             });
 
             services.AddAuthorization();
+
+
+            //Add services with DI
+            services.AddTransient<IVideoService, VideoService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

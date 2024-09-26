@@ -2,7 +2,7 @@
 
 namespace UssjStream.Web.Services.Videos
 {
-    public class VideoService
+    public class VideoService: IVideoService
     {
         public string GetVideoUrl(string videoName)
         {
@@ -15,7 +15,7 @@ namespace UssjStream.Web.Services.Videos
             {
                 Id = idVideo,
                 Title = "RM2Cesaire1",
-              
+                VideoUrl = GetVideoUrl("RM2Cesaire1")
             };
 
             return video;

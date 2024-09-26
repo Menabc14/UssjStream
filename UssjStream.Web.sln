@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UssjStream.Web", "UssjStream.Web.csproj", "{F77B82EA-17C1-4E49-8AAD-9F4F0D0ACA44}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UssjStream.Web", "UssjStream.Web\UssjStream.Web.csproj", "{F77B82EA-17C1-4E49-8AAD-9F4F0D0ACA44}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UssjStream.Models", "..\UssjStream.Models\UssjStream.Models.csproj", "{8AA508E7-33E8-47FE-968B-80B22AFB3BBA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UssjStream.Models", "UssjStream.Models\UssjStream.Models.csproj", "{8AA508E7-33E8-47FE-968B-80B22AFB3BBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

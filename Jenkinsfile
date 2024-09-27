@@ -1,10 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'mcr.microsoft.com/dotnet/sdk:8.0'
-            args '-v /var/run/docker.sock:/var/run/docker.sock'
-        }        
-    }
+    agent any
     environment {
         DOTNET_CLI_HOME = "C:\\Program Files\\dotnet"
     }
@@ -20,9 +15,11 @@ pipeline {
              script {
                     if (isUnix()) {
                         // Pour Linux/MacOS
+                        docker.image('mcr.microsoft.com/dotnet/sdk:8.0').inside {
                         sh 'dotnet --version'  // Vérifier la version de .NET
                         sh "dotnet restore"
-                        sh "dotnet build --configuration Release"
+                        sh "dotnet build --configuration Release"                        
+                        }
                     } else {
                         // Pour Windows
                         bat "dotnet restore"

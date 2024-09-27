@@ -11,7 +11,13 @@ pipeline {
         }
         stage('Build') {
             steps {
-                echo 'Building another one...'
+                echo 'Building the project...'
+                // Restoring dependencies
+                //bat "cd ${DOTNET_CLI_HOME} && dotnet restore"
+                bat "dotnet restore"
+
+                // Building the application
+                bat "dotnet build --configuration Release"                
             }
         }
     }
